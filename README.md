@@ -1,5 +1,10 @@
-###epicGrid
-####A pure - no jQuery, lightweight - 1.4kb, responsive - built for mobiles, tablets and desktops, javascript solution for building grid systems.
+##epicGrid
+
+####Features 
+* no dependencies - written in pure javascript
+* lightweight - 1.4kb when minified and gzipped, only 2.5kb before
+* responsive - built for mobiles, tablets and desktops - reacts to resize events
+* no clearfix containers! - automagically calculates where to clear floats
 
 ####Nomenclature
 
@@ -13,3 +18,10 @@ Class Names cheatsheet | Description
 
 * choose one of the prefixes `d`, `t` or `m`, for desktop, tablet or mobile eg. `d-col-1-2`
 * classes `left`, `right` and `offset` must be accompanied with a `col` class to specify width.
+
+
+####To-do
+
+* Add options
+* Add the ability to `hide` columns
+* Optimize regex
