@@ -43,4 +43,4 @@ function epicGrid() {
             }
         }
 }
-window.addEventListener("resize", epicGrid);
+window.addEventListener("resize", epicGrid), epicGrid();
