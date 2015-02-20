@@ -9,14 +9,12 @@
 * no clearfix containers! - automagically calculates where to clear floats
 
 ####Setup
-
-not to difficult
-
 ```html
   <script src="js/epicGrid.min.js"></script>
 </body>
 ```
 
+####How to use
 Do you like to use a 12 column grid system?
 ```html
 <div class="d-col-8-12" id="main">...</div>
@@ -34,26 +32,26 @@ A 237 column grid system?
 ```
 A mixed grid system?
 ```html
-<div class="d-col-3-4 t-col-5-8 m-center-6-7" id="main">
-  <div class="d-col-5-7 t-center-9-10 m-center-1-1" id="article">...</div>
-  <div class="d-col-2-7 t-center-9-10 m-center-1-1" id="aside">...</div>
+<div class="d-col-3-4 t-col-5-8 m-center-8-9" id="main">
+  <div class="d-col-5-7 t-center-9-10" id="article">...</div>
+  <div class="d-col-2-7 t-center-9-10" id="aside">...</div>
 </div>
-<div class="d-col-1-4 t-col-3-8 m-center-6-7" id="sidebar">...</div>
+<div class="d-col-1-4 t-col-3-8 m-center-9-10" id="sidebar">...</div>
 ```
 Truth be told, you can use any style you want. epicGrid does all the maths, calculating the column widths independently for each device so that you can concentrate on the layout. other features include
 
-#####Auto clearing of floats
+####Auto clearing of floats
 clearing divs are added automatically, independently for each viewport. They are also removed, then re-added everytime a user resizes their device.
 
 In the above example "clearing divs" would be added in two places for desktop and once for tablet
 
 ```html
-<div class="d-col-3-4 t-col-5-8 m-center-6-7" id="main">
+<div class="d-col-3-4 t-col-5-8 m-center-8-9" id="main">
   <div class="d-col-5-7 t-center-9-10" id="article">...</div>
   <div class="d-col-2-7 t-center-9-10" id="aside">...</div>
   <!--<div style="clear:both"></div>  desktop-->
 </div>
-<div class="d-col-1-4 t-col-3-8 m-center-6-7" id="sidebar">...</div>
+<div class="d-col-1-4 t-col-3-8 m-center-9-10" id="sidebar">...</div>
 <!--<div style="clear:both"></div>  desktop and tablet-->
 ```
 
