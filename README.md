@@ -6,6 +6,13 @@
 * responsive - built for mobiles, tablets and desktops - reacts to resize events
 * no clearfix containers! - automagically calculates where to clear floats
 
+####Setup
+
+```html
+  &lt;script src="js/epicGrid.min.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+```
+
 ####Nomenclature
 
 Class Names cheatsheet | Description
