@@ -19,7 +19,9 @@ Class Names cheatsheet | Description
 * choose one of the prefixes `d`, `t` or `m`, for desktop, tablet or mobile eg. `d-col-1-2`
 * classes `left`, `right` and `offset` must be accompanied with a `col` class to specify width.
 
+####version
 
+* 0.8 - initial release
 ####To-do
 
 * Add options
