@@ -56,9 +56,9 @@ On a screen size greater than 656px wide, this markup would result in 2 columns 
 
 ######NOTE
 
-In the above example, since there is no `x-col` or `s-col` markup, columns will revert to a width of 100% wide.
+In the above example, since there is no `x-col` or `s-col` markup, columns will revert to a width of 100% wide, when the screen is less than or equal to 656px. 
 
-In the above example, since there is no `l-col` or `h-col` markup, columns will **inherit** the width of the previous largest breakpoint, ie. `m-col`.
+In the above example, since there is no `l-col` or `h-col` markup, columns will **inherit** the width of the previous largest breakpoint, ie. `m-col`, when the screen width is greater than 1024px and 1440px.
 
 ___
 
@@ -98,6 +98,8 @@ In this example the second column is offset - pushed to the right, by one quarte
 ###### NOTE
 
 Notice how all the columns widths plus the offset equal one ¼ + ¼ + ¼ + ¼ = 1, this is to ensure that the column is cleared after the last column - columns are cleared after the total widths plus offsets equals one.
+
+A centered column cannot be offset.
 
 ___
 
@@ -140,7 +142,9 @@ Since the main column is eight tenths wide and centered, that leaves one tenth o
 
 ######NOTE
 
-Since displaced columns are floated, but not cleared, make sure the content in Its parent column is longer than that in the displaced column. 
+Since displaced columns are floated, but not cleared, make sure the content in Its parent column is longer than that in the displaced column.
+
+A centered column cannot be displaced.
 
 ___
 
@@ -204,8 +208,8 @@ ___
 
 Class Names cheatsheet | Description
 -----------------------------|------------
-`prefix-col-x-y`  | A column for the chosen viewport. X number of columnns wide from a total of Y
-`prefix-center-x-y` | Center the column for that viewport. X number of columnns wide from a total of Y
+`prefix-col-x-y`  | A column for the chosen viewport. X number of columns wide from a total of Y
+`prefix-center-x-y` | Center the column for that viewport. X number of columns wide from a total of Y
 `prefix-offset-x-y` | Offset the column to the right by X number of columns from a total of Y
 `prefix-left-x-y` | Displace a column to the left by X number of columns from a total of Y
 `prefix-right-x-y` | Displace a column to the right by X number of columns from a total of Y
@@ -215,6 +219,25 @@ Class Names cheatsheet | Description
 
 ___
 
+####Questions
+
+>Can I mix my column sizes
+
+>Yes, you can use a mixture of wierd and wonderful fractions such as;
+
+```html
+<div class="m-col-1-6">...</div>
+<div class="m-col-2-18">...</div>
+<div class="m-col-2-14">...</div>
+<div class="m-col-3-10">...</div>
+<div class="m-col-3-20">...</div>
+<div class="m-col-4-31">...</div>
+```
+
+Just so long as they all add up to 1
+
+
+___
 ####version
 ######0.9
 * larger breakpoints now inherit smaller ones
