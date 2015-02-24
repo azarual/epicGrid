@@ -221,7 +221,8 @@ ___
 
 ####Questions
 
->Can I mix my column sizes
+>Can I mix my column sizes?
+
 
 >Yes, you can use a mixture of wierd and wonderful fractions such as;
 
