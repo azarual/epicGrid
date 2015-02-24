@@ -74,7 +74,7 @@ There is no point declaring a new breakpoint if it is the same as the previous o
 
 #### Simple Offset Example
 
-Offsetting a column will push it to the right by the deired amount.
+Offsetting a column will push it to the right by the desired amount.
 
 ```html
 <div class="m-col-1-4" id="first">...</div>
@@ -193,10 +193,13 @@ Class Names cheatsheet | Description
 
 
 ####version
+######0.9
+* larger breakpoints now inherit smaller ones
+* clear-floats is now a `<br>` not a `<div>`
+* changed prefixes, added two more 
 
-
-* 0.9 - larger breakpoints now inherit smaller ones, clear-floats is now a <br> not a <div>
-* 0.8 - initial release
+######0.8
+* initial release
 
 
 ####To-do
