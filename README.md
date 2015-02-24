@@ -1,12 +1,12 @@
 ##epicGrid
 
-####An infinite possibilities Grid System - let epicGrid do the maths, allowing you to use whatever grid style you like.
+#####An infinite possibilities Grid System - let epicGrid do the maths, allowing you to use whatever grid style you like.
 
 ####Features 
 * no dependencies - written in pure javascript
-* lightweight - 1.4kb when minified and gzipped, only 2.5kb before
+* lightweight - 976 bytes when minified and gzipped, only 2.68kb before
 * easy to use - if you can use fractions, you can use epicGrid
-* responsive - built for mobiles, tablets and desktops - reacts to resize events
+* responsive - includes upto 5 breakpoint - reacts to resize events
 * no clearfix containers! - automagically calculates where to clear floats
 
 ####Setup
@@ -25,30 +25,50 @@ or include in the head and call before the closing &lt;/body&gt;
 </body>
 ```
 ####How to use
-Do you like to use a 12 column grid system?
+
+You write column widths like so `prefix-col-X-Y`, where `X ÷ Y` is the columns width and the `prefix` is either `x, s, m, l or h`, these represent the different screen sizes.
+
+Prefix | Size
+-------|-----
+`x`| `<=320px`
+`s`| `<=656px`
+`m`| `<=1024px`
+`l`| `<=1440px`
+`h`| `>1440px`
+
+#### Simple Column Example
+
 ```html
-<div class="d-col-8-12" id="main">...</div>
-<div class="d-col-4-12" id="sidebar">...</div>
+<div class="m-col-3-4" id="main">...</div>
+<div class="m-col-1-4" id="sidebar">...</div>
 ```
-A 16 column grid system?
+
+On a screen size greater than 656px wide, this markup would result in 2 columns - a main and a sidebar, three quarters and one quarter wide, respectively. On a screen size less than or equal to 656px, the columns would both be 100% wide, with the sidebar below the main column.
+
+######NOTE
+
+In the above example, since there is no `x-col` or `s-col` markup columns will revert to a width of 100% wide.
+
+In the above example, since there is no `l-col` or `h-col` markup columns will **inherit** the width of the last largest breakpoint, ie. `m-col`.
+
+#### Simple Centered Example
+
 ```html
-<div class="d-col-11-16" id="main">...</div>
-<div class="d-col-5-16" id="sidebar">...</div>
+<div class="s-center-6-7 l-center-3-4" id="first">...</div>
+<div class="s-center-6-7 l-center-3-4" id="second">...</div>
 ```
-A 237 column grid system?
+
+On devices greater than 320px wide both columns will be six sevenths wide and centered. On devices with a screen size greater than 1024px wide both columns will be three quarters wide and centered. Since the smallest declared breakpoint is `s-center`, both columns will become 100% wide on devices with a screen size less than or equal to 320px wide.
+
+######NOTE
+There is no point declaring a new breakpoint if it is the same as the previous one ie.
 ```html
-<div class="d-col-185-237" id="main">...</div>
-<div class="d-col-52-237" id="sidebar">...</div>
+<div class="s-center-6-7 l-center-3-4">...</div>
+// is the same as
+<div class="s-center-6-7 m-center-6-7 l-center-3-4 h-center-3-4">...</div>
 ```
-A mixed grid system?
-```html
-<div class="d-col-3-4 t-col-5-8 m-center-8-9" id="main">
-  <div class="d-col-5-7 t-center-9-10" id="article">...</div>
-  <div class="d-col-2-7 t-center-9-10" id="aside">...</div>
-</div>
-<div class="d-col-1-4 t-col-3-8 m-center-9-10" id="sidebar">...</div>
-```
-Truth be told, you can use any style you want. epicGrid does all the maths, calculating the column widths independently for each device so that you can concentrate on the layout. other features include
+
+
 
 #####Auto clearing of floats
 clearing divs are added automatically, independently for each viewport. They are also removed, then re-added everytime a user resizes their device.
