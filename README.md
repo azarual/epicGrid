@@ -9,6 +9,8 @@
 * responsive - includes upto 5 breakpoints - reacts to resize events
 * no clearfix containers! - automagically calculates where to clear floats
 
+___
+
 ####Setup
 ```html
   <script src="js/epicGrid.min.js"></script>
@@ -24,6 +26,9 @@ or include in the `<head>` and call before the closing `</body>`
   </script>
 </body>
 ```
+
+___
+
 ####How to use
 
 You write column widths like so `prefix-col-X-Y`, where `X ÷ Y` is the columns width and the `prefix` is either `x, s, m, l or h`, these represent the different screen sizes.
@@ -35,6 +40,8 @@ You write column widths like so `prefix-col-X-Y`, where `X ÷ Y` is the columns 
 |Medium |`m`| `greater than 656px`|
 |Large |`l`| `greater than 1024px`|
 |Huge |`h`| `greater than 1440px`|
+
+___
 
 #### Simple Column Example
 
@@ -52,6 +59,8 @@ On a screen size greater than 656px wide, this markup would result in 2 columns 
 In the above example, since there is no `x-col` or `s-col` markup, columns will revert to a width of 100% wide.
 
 In the above example, since there is no `l-col` or `h-col` markup, columns will **inherit** the width of the previous largest breakpoint, ie. `m-col`.
+
+___
 
 #### Simple Centered Example
 
@@ -72,6 +81,8 @@ There is no point declaring a new breakpoint if it is the same as the previous o
 <div class="s-center-6-7 m-center-6-7 l-center-3-4 h-center-3-4">...</div>
 ```
 
+___
+
 #### Simple Offset Example
 
 Offsetting a column will push it to the right by the desired amount.
@@ -87,6 +98,8 @@ In this example the second column is offset - pushed to the right, by one quarte
 ###### NOTE
 
 Notice how all the columns widths plus the offset equal one ¼ + ¼ + ¼ + ¼ = 1, this is to ensure that the column is cleared after the last column - columns are cleared after the total widths plus offsets equals one.
+
+___
 
 #### Simple Displaced Column Example - aligned to the parents margin
 
@@ -105,6 +118,8 @@ You can displace (push or pull) columns to the left or right in order to let con
 ```
 
 The markup `m-left-0-1` would result in a column being displaced to the left and align to the left margin of Its parent column (main)
+
+___
 
 #### Simple Displaced Column Example - pushed through the parents margin
 
@@ -127,6 +142,7 @@ Since the main column is eight tenths wide and centered, that leaves one tenth o
 
 Since displaced columns are floated, but not cleared, make sure the content in Its parent column is longer than that in the displaced column. 
 
+___
 
 #### Simple Nested Example
 
@@ -147,7 +163,10 @@ Infinite nesting of columns is possible, just remember; the more you nest, the s
 
 In the above example the `fifth` column would only be about 20% of the total viewport wide. 
 
+___
+
 #####Auto clearing of floats
+
 clear-floats are added automatically, independently for each viewport. They are also removed, then re-added everytime a user resizes their device.
 
 In this example you can see how the auto-insertion of "clear-floats" allows you to create layouts that would be impossible when using standard clearfix containers.
@@ -177,6 +196,7 @@ In this example you can see how the auto-insertion of "clear-floats" allows you 
 
 The comments show where, and for what device the clear-floats are added
 
+___
 
 ####Nomenclature
 
@@ -191,6 +211,7 @@ Class Names cheatsheet | Description
 * choose one of the prefixes `x`, `s`, `m`, `l` or `h` for that viewport
 * classes `left`, `right` and `offset` must be accompanied with a `col` class to specify width.
 
+___
 
 ####version
 ######0.9
@@ -201,6 +222,7 @@ Class Names cheatsheet | Description
 ######0.8
 * initial release
 
+___
 
 ####To-do
 
