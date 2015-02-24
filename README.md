@@ -14,7 +14,7 @@
   <script src="js/epicGrid.min.js"></script>
 </body>
 ```
-or include in the head and call before the closing &lt;/body&gt;
+or include in the `<head>` and call before the closing `</body>`
 ```html
   <script src="js/epicGrid.min.js"></script>
 </head>
