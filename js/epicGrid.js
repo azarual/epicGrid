@@ -1,4 +1,4 @@
-/*! epicGrid.js v0.8 | GNU License | git.io/AZCS | Paul Browne | 2015 */
+/*! epicGrid.js v0.9 | GNU License | git.io/AZCS | Paul Browne | 2015 */
 function epicGrid() {
     for (var a = window.innerWidth, b = document.getElementsByTagName("*"), c = document.getElementsByClassName("egcf"), d = document.querySelectorAll('[class*="-col-"],[class*="-center-"]'); 0 < c.length;) c[0].parentNode.removeChild(c[0]);
     for (c = 0; c < d.length; ++c) {
