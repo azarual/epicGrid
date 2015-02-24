@@ -38,20 +38,24 @@ You write column widths like so `prefix-col-X-Y`, where `X ÷ Y` is the columns 
 
 #### Simple Column Example
 
+The bread-and-butter of any grid system is its ability to create columns. epicGrid does this like so...
+
 ```html
 <div class="m-col-3-4" id="main">...</div>
 <div class="m-col-1-4" id="sidebar">...</div>
 ```
 
-On a screen size greater than 656px wide, this markup would result in 2 columns - a main and a sidebar, three quarters and one quarter wide, respectively. On a screen size less than or equal to 656px, the columns would both be 100% wide, with the sidebar below the main column.
+On a screen size greater than 656px wide, this markup would result in 2 columns - a main and a sidebar, three quarters and one quarter wide, respectively. On a screen size less than or equal to 656px, the columns would both be 100% wide, with the sidebar following after the main column.
 
 ######NOTE
 
-In the above example, since there is no `x-col` or `s-col` markup columns will revert to a width of 100% wide.
+In the above example, since there is no `x-col` or `s-col` markup, columns will revert to a width of 100% wide.
 
-In the above example, since there is no `l-col` or `h-col` markup columns will **inherit** the width of the last largest breakpoint, ie. `m-col`.
+In the above example, since there is no `l-col` or `h-col` markup, columns will **inherit** the width of the previous largest breakpoint, ie. `m-col`.
 
 #### Simple Centered Example
+
+Centered columns are columns that are centered - shocker!
 
 ```html
 <div class="s-center-6-7 l-center-3-4" id="first">...</div>
@@ -64,11 +68,13 @@ On devices greater than 320px wide both columns will be six sevenths wide and ce
 There is no point declaring a new breakpoint if it is the same as the previous one ie.
 ```html
 <div class="s-center-6-7 l-center-3-4">...</div>
-// is the same as
+<!-- is the same as -->
 <div class="s-center-6-7 m-center-6-7 l-center-3-4 h-center-3-4">...</div>
 ```
 
 #### Simple Offset Example
+
+Offsetting a column will push it to the right by the deired amount.
 
 ```html
 <div class="m-col-1-4" id="first">...</div>
@@ -76,113 +82,120 @@ There is no point declaring a new breakpoint if it is the same as the previous o
 <div class="m-col-1-4" id="third">...</div>
 ```
 
+In this example the second column is offset - pushed to the right, by one quarters width, on screens larger than 656px. 
+
+###### NOTE
+
+Notice how all the columns widths plus the offset equal one ¼ + ¼ + ¼ + ¼ = 1, this is to ensure that the column is cleared after the last column - columns are cleared after the total widths plus offsets equals one.
+
+#### Simple Displaced Column Example - aligned to the parents margin
+
+You can displace (push or pull) columns to the left or right in order to let content in the parent column (eg. text) flow around the displaced column.
+
+```html
+<div class="m-center-8-10" id="main">
+    <h1>...</h1>
+    <p>...</p>
+    <div class="m-col-3-5 m-left-0-1" id="left">
+        <h2>...</h2>
+        <p>...</p>
+    </div>
+    <p>...</p>
+</div>
+```
+
+The markup `m-left-0-1` would result in a column being displaced to the left and align to the left margin of Its parent column (main)
+
+#### Simple Displaced Column Example - pushed through the parents margin
+
+You can also displace columns through the left or right margin of Its parent.
+
+```html
+<div class="m-center-8-10" id="main">
+    <h1>...</h1>
+    <p>...</p>
+    <div class="m-col-3-5 m-left-1-10" id="left">
+        <h2>...</h2>
+        <p>...</p>
+    </div>
+    <p>...</p>
+</div>
+```
+Since the main column is eight tenths wide and centered, that leaves one tenth of free space on either side. By adding the class `m-left-1-10` the displaced column is pushed through Its parents left margin by one tenth 
+
+######NOTE
+
+Since displaced columns are floated, but not cleared, make sure the content in Its parent column is longer than that in the displaced column. 
 
 
+#### Simple Nested Example
 
+Infinite nesting of columns is possible, just remember; the more you nest, the smaller the columns will become.
+
+```html
+<div class="m-center-9-10" id="first">
+    <div class="m-col-3-4" id="second">
+        <div class="m-center-12-13" id="third">
+            <div class="m-col-4-8 m-offset-1-8" id="fourth">...</div>
+            <div class="m-col-3-8" id="fifth">...</div>
+        </div>
+    </div>
+    <div class="m-col-1-4" id="sixth">...</div>
+</div>
+```
+######NOTE
+
+In the above example the `fifth` column would only be about 20% of the total viewport wide. 
 
 #####Auto clearing of floats
-clearing divs are added automatically, independently for each viewport. They are also removed, then re-added everytime a user resizes their device.
+clear-floats are added automatically, independently for each viewport. They are also removed, then re-added everytime a user resizes their device.
 
-In the above example "clearing divs" would be added in two places for desktop and once for tablet.
-"clearing divs" are added when the column count equals 1 ie. `3/4 + 1/4 = 1`
-
-```html
-<div class="d-col-3-4 t-col-5-8 m-center-8-9" id="main">
-  <div class="d-col-5-7 t-center-9-10" id="article">...</div>
-  <div class="d-col-2-7 t-center-9-10" id="aside">...</div>
-  <!--<div style="clear:both"></div>  desktop-->
-</div>
-<div class="d-col-1-4 t-col-3-8 m-center-9-10" id="sidebar">...</div>
-<!--<div style="clear:both"></div>  desktop and tablet-->
-```
-
-In this example you can see how the auto-insertion of "clearing divs" allows you to create layouts that would be impossible when using standard clearfix containers.
+In this example you can see how the auto-insertion of "clear-floats" allows you to create layouts that would be impossible when using standard clearfix containers.
 
 ```html
-<div class="d-col-1-4 t-col-1-3 m-col-1-2"></div>
-<div class="d-col-1-4 t-col-1-3 m-col-1-2"></div>
-<!--<div style="clear:both"></div>  mobile  -->
-<div class="d-col-1-4 t-col-1-3 m-col-1-2"></div>
-<!--<div style="clear:both"></div>  tablet  -->
-<div class="d-col-1-4 t-col-1-3 m-col-1-2"></div>
-<!--<div style="clear:both"></div>  desktop and mobile  -->
-<div class="d-col-1-4 t-col-1-3 m-col-1-2"></div>
-<div class="d-col-1-4 t-col-1-3 m-col-1-2"></div>
-<!--<div style="clear:both"></div>  tablet and mobile  -->
-<div class="d-col-1-4 t-col-1-3 m-col-1-2"></div>
-<div class="d-col-1-4 t-col-1-3 m-col-1-2"></div>
-<!--<div style="clear:both"></div>  desktop and mobile-->
-<div class="d-col-1-4 t-col-1-3 m-col-1-2"></div>
-<!--<div style="clear:both"></div>  tablet  -->
-<div class="d-col-1-4 t-col-1-3 m-col-1-2"></div>
-<!--<div style="clear:both"></div>  mobile  -->
-<div class="d-col-1-4 t-col-1-3 m-col-1-2"></div>
-<div class="d-col-1-4 t-col-1-3 m-col-1-2"></div>
-<!--<div style="clear:both"></div>  desktop, tablet and mobile  -->
+<div class="s-col-1-2 m-col-1-3 l-col-1-4 h-col-1-5"></div>
+<div class="s-col-1-2 m-col-1-3 l-col-1-4 h-col-1-5"></div>
+<!-- <br style="clear:both;">-->    <!-- s -->
+<div class="s-col-1-2 m-col-1-3 l-col-1-4 h-col-1-5"></div>
+<!-- <br style="clear:both;">-->    <!-- m -->
+<div class="s-col-1-2 m-col-1-3 l-col-1-4 h-col-1-5"></div>
+<!-- <br style="clear:both;">-->    <!-- s and l -->
+<div class="s-col-1-2 m-col-1-3 l-col-1-4 h-col-1-5"></div>
+<!-- <br style="clear:both;">-->    <!-- h -->
+<div class="s-col-1-2 m-col-1-3 l-col-1-4 h-col-1-5"></div>
+<!-- <br style="clear:both;">-->    <!-- s and m -->
+<div class="s-col-1-2 m-col-1-3 l-col-1-4 h-col-1-5"></div>
+<div class="s-col-1-2 m-col-1-3 l-col-1-4 h-col-1-5"></div>
+<!-- <br style="clear:both;">-->    <!-- s and l -->
+<div class="s-col-1-2 m-col-1-3 l-col-1-4 h-col-1-5"></div>
+<!-- <br style="clear:both;">-->    <!-- m -->
+<div class="s-col-1-2 m-col-1-3 l-col-1-4 h-col-1-5"></div>
+<!-- <br style="clear:both;">-->    <!-- s and h -->
 ```
-[demo](http://codepen.io/zhirkovski/full/yyKZxQ/)
 
-#####centering columns
+######NOTE
 
-two centered columns, five sixths wide and eight thirteenths wide, simple.
+The comments show where, and for what device the clear-floats are added
 
-```html
-<div class="d-center-5-6"></div>
-<div class="d-center-8-13"></div>
-```
-[demo](http://codepen.io/zhirkovski/pen/GgxzXm)
-
-
-#####offset columns
-
-three columns, with the last one offset to the right, equally simple.
-
-```html
-<div class="d-col-1-4"></div>
-<div class="d-col-1-4"></div>
-<div class="d-col-1-4 d-offset-1-4"></div>
-```
-[demo](http://codepen.io/zhirkovski/pen/KwoJeB)
-
-
-#####displaced columns
-
-The main centered column is 8/10ths wide, leaving 1/10th of free space on either side.
-The first two displaced columns are aligned to the left/rigth margin of their parent.
-The second two columns are displaced through the margin of their parent by 1/10th each.
-Be careful when displacing columns through margins of parents, make sure you leave enough free space.
-
-```html
-<div class="d-center-8-10">
-  <div class="d-col-3-5 d-left-0-1">...</div> <!-- aligned to the parent's left margin -->
-  <p>...</p>
-  <div class="d-col-3-5 d-right-0-1">...</div> <!-- aligned to the parent's right margin -->
-  <p>...</p>
-  <div class="d-col-3-5 d-left-1-10">...</div> <!-- pushed through the parent's left margin -->
-  <p>...</p>
-  <div class="d-col-3-5 d-right-1-10">...</div> <!-- pushed through the parent's right margin -->
-  <p>...</p>
-</div>
-<div class="d-col-1-4 d-offset-1-4"></div>
-```
-[demo](http://codepen.io/zhirkovski/full/jEzdXv/)
 
 ####Nomenclature
 
 Class Names cheatsheet | Description
 -----------------------------|------------
-`[d,t,m]-col-x-y`  | A column for the chosen viewport. X number of columnns wide from a total of Y
-`[d,t,m]-center-x-y` | Center the column for that viewport. X number of columnns wide from a total of Y
-`[d,t,m]-offset-x-y` | Offset the column to the right by X number of columns from a total of Y
-`[d,t,m]-left-x-y` | Displace a column to the left by X number of columns from a total of Y
-`[d,t,m]-right-x-y` | Displace a column to the right by X number of columns from a total of Y
+`prefix-col-x-y`  | A column for the chosen viewport. X number of columnns wide from a total of Y
+`prefix-center-x-y` | Center the column for that viewport. X number of columnns wide from a total of Y
+`prefix-offset-x-y` | Offset the column to the right by X number of columns from a total of Y
+`prefix-left-x-y` | Displace a column to the left by X number of columns from a total of Y
+`prefix-right-x-y` | Displace a column to the right by X number of columns from a total of Y
 
-* choose one of the prefixes `d`, `t` or `m`, for desktop, tablet or mobile eg. `d-col-1-2`
+* choose one of the prefixes `x`, `s`, `m`, `l` or `h` for that viewport
 * classes `left`, `right` and `offset` must be accompanied with a `col` class to specify width.
 
 
 ####version
 
+
+* 0.9 - larger breakpoints now inherit smaller ones, clear-floats is now a <br> not a <div>
 * 0.8 - initial release
 
 
