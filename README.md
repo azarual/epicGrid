@@ -28,13 +28,13 @@ or include in the head and call before the closing &lt;/body&gt;
 
 You write column widths like so `prefix-col-X-Y`, where `X ÷ Y` is the columns width and the `prefix` is either `x, s, m, l or h`, these represent the different screen sizes.
 
-|type | Prefix | Size|
-|-------|--|---|
-|eXtra small |`x`| `<=320px`|
-|Small |`s`| `<=656px`|
-|Medium |`m`| `<=1024px`|
-|Large |`l`| `<=1440px`|
-|Huge |`h`| `>1440px`|
+| type | Prefix | Size |
+|------|--------|------|
+|eXtra small |`x`| |
+|Small |`s`| `greater than 320px`|
+|Medium |`m`| `greater than 656px`|
+|Large |`l`| `greater than 1024px`|
+|Huge |`h`| `greater than 1440px`|
 
 #### Simple Column Example
 
