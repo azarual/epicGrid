@@ -243,7 +243,8 @@ ___
 ######0.9
 * larger breakpoints now inherit smaller ones
 * clear-floats is now a `<br>` not a `<div>`
-* changed prefixes, added two more 
+* changed prefixes, added two more
+* added customEvent when ready
 
 ######0.8
 * initial release
