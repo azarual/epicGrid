@@ -6,7 +6,7 @@
 * no dependencies - written in pure javascript
 * lightweight - 976 bytes when minified and gzipped, only 2.68kb before
 * easy to use - if you can use fractions, you can use epicGrid
-* responsive - includes upto 5 breakpoint - reacts to resize events
+* responsive - includes upto 5 breakpoints - reacts to resize events
 * no clearfix containers! - automagically calculates where to clear floats
 
 ####Setup
@@ -28,13 +28,13 @@ or include in the head and call before the closing &lt;/body&gt;
 
 You write column widths like so `prefix-col-X-Y`, where `X ÷ Y` is the columns width and the `prefix` is either `x, s, m, l or h`, these represent the different screen sizes.
 
-Prefix | Size
--------|-----
-`x`| `<=320px`
-`s`| `<=656px`
-`m`| `<=1024px`
-`l`| `<=1440px`
-`h`| `>1440px`
+|type | Prefix | Size|
+|-------|--|---|
+|eXtra small |`x`| `<=320px`|
+|Small |`s`| `<=656px`|
+|Medium |`m`| `<=1024px`|
+|Large |`l`| `<=1440px`|
+|Huge |`h`| `>1440px`|
 
 #### Simple Column Example
 
@@ -67,6 +67,16 @@ There is no point declaring a new breakpoint if it is the same as the previous o
 // is the same as
 <div class="s-center-6-7 m-center-6-7 l-center-3-4 h-center-3-4">...</div>
 ```
+
+#### Simple Offset Example
+
+```html
+<div class="m-col-1-4" id="first">...</div>
+<div class="m-col-1-4 m-offset-1-4" id="second">...</div>
+<div class="m-col-1-4" id="third">...</div>
+```
+
+
 
 
 
