@@ -1,5 +1,5 @@
 /*! epicGrid.js v1.0 | GNU License | git.io/AZCS | Paul Browne | 2015 */
-! function() {
+!function() {
     function a(a, b) {
         var c = [window.innerWidth];
         return onresize = function() {
