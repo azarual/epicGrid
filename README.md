@@ -240,6 +240,12 @@ Just so long as they all add up to 1
 
 ___
 ####version
+
+######1.0
+* added code closure
+* removed customEvent
+* added debounced resize event
+
 ######0.9
 * larger breakpoints now inherit smaller ones
 * clear-floats is now a `<br>` not a `<div>`
