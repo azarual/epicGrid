@@ -47,13 +47,13 @@ ___
 
 |    | xx | pp | pl | tp | tl | dt | hd |
 |----|----|----|----|----|----|----|----|
-| xx |    | na | na | na | na | na | na |
-| pp |yes | na | na | na | na | na | na |
-| pl |yes |no  | na | na | na | na | na |
-| tp |yes |yes |no  | na | na | na | na |
-| tl |yes |no  |yes |no  | na | na | na |
-| dt |yes |no  |yes |no  |yes | na | na |
-| hd |yes |no  |yes |no  |yes |yes | na |
+| xx |    |    |    |    |    |    |    |
+| pp |yes |    |    |    |    |    |    |
+| pl |yes |no  |    |    |    |    |    |
+| tp |yes |yes |no  |    |    |    |    |
+| tl |yes |no  |yes |no  |    |    |    |
+| dt |yes |no  |yes |no  |yes |    |    |
+| hd |yes |no  |yes |no  |yes |yes |    |
 
 ___
 
