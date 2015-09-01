@@ -6,7 +6,7 @@
 * no dependencies - written in pure javascript
 * lightweight - 976 bytes when minified and gzipped, only 2.68kb before
 * easy to use - if you can use fractions, you can use epicGrid
-* responsive - includes upto 5 breakpoints - reacts to resize events
+* responsive - includes upto 6 breakpoints - reacts to resize events
 * no clearfix containers! - automagically calculates where to clear floats
 
 ___
@@ -31,15 +31,29 @@ ___
 
 ####How to use
 
-You write column widths like so `prefix-col-X-Y`, where `X ÷ Y` is the columns width and the `prefix` is either `x, s, m, l or h`, these represent the different screen sizes.
+You write column widths like so `prefix-col-X-Y`, where `X ÷ Y` is the columns width and the `prefix` is either `xx, pp, pl, tp, tl, dt or hd`, these represent the different screen sizes.
 
 | type | Prefix | Size |
 |------|--------|------|
-|eXtra small |`x`| |
-|Small |`s`| `greater than 320px`|
-|Medium |`m`| `greater than 656px`|
-|Large |`l`| `greater than 1024px`|
-|Huge |`h`| `greater than 1440px`|
+|cross browser |`xx`| `all sizes`|
+|phone: portrait |`pp`| `greater than 300px & height greater than width`|
+|phone: landscape |`pl`| `greater than 300px & width greater than height`|
+|tablet: portrait |`tp`| `greater than 440px & height greater than width`|
+|tablet: landscape |`tl`| `greater than 640px & width greater than height`|
+|desktop |`dt`| `greater than 1024px`|
+|full hd |`hd`| `greater than 1440px`|
+
+___
+
+|--| xx | pp | pl | tp | tl | dt | hd |
+|--|----|----|----|----|----|----|----|
+|xx|    |    |    |    |    |    |    |
+|pp|yes |    |    |    |    |    |    |
+|pl|yes |no  |    |    |    |    |    |
+|tp|yes |yes |no  |    |    |    |    |
+|tl|yes |no  |yes |no  |    |    |    |
+|dt|yes |no  |yes |no  |yes |    |    |
+|hd|yes |no  |yes |no  |yes |yes |    |
 
 ___
 
@@ -48,8 +62,8 @@ ___
 The bread-and-butter of any grid system is its ability to create columns. epicGrid does this like so...
 
 ```html
-<div class="m-col-3-4" id="main">...</div>
-<div class="m-col-1-4" id="sidebar">...</div>
+<div class="tp-col-3-4" id="main">...</div>
+<div class="tp-col-1-4" id="sidebar">...</div>
 ```
 
 On a screen size greater than 656px wide, this markup would result in 2 columns - a main and a sidebar, three quarters and one quarter wide, respectively. On a screen size less than or equal to 656px, the columns would both be 100% wide, with the sidebar following after the main column.
