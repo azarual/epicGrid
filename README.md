@@ -232,7 +232,7 @@ In this example you can see how the auto-insertion of "clear-floats" allows you 
 The comments show where, and for what device the clear-floats are added
 
 ___
-####[Demo of all the above](http://codepen.io/zhirkovski/full/wBjjyv/)
+####[Demo of all the above](https://output.jsbin.com/locuqe)
 ___
 
 ####Nomenclature
