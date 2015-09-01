@@ -45,15 +45,15 @@ You write column widths like so `prefix-col-X-Y`, where `X ÷ Y` is the columns 
 
 ___
 
-|--| xx | pp | pl | tp | tl | dt | hd |
+|__| xx | pp | pl | tp | tl | dt | hd |
 |--|----|----|----|----|----|----|----|
-|xx|    |    |    |    |    |    |    |
-|pp|yes |    |    |    |    |    |    |
-|pl|yes |no  |    |    |    |    |    |
-|tp|yes |yes |no  |    |    |    |    |
-|tl|yes |no  |yes |no  |    |    |    |
-|dt|yes |no  |yes |no  |yes |    |    |
-|hd|yes |no  |yes |no  |yes |yes |    |
+|xx|____|____|____|____|____|____|____|
+|pp|yes |____|____|____|____|____|____|
+|pl|yes |no  |____|____|____|____|____|
+|tp|yes |yes |no  |____|____|____|____|
+|tl|yes |no  |yes |no  |____|____|____|
+|dt|yes |no  |yes |no  |yes |____|____|
+|hd|yes |no  |yes |no  |yes |yes |____|
 
 ___
 
