@@ -45,9 +45,9 @@ You write column widths like so `prefix-col-X-Y`, where `X ÷ Y` is the columns 
 
 ___
 
-| na | xx | pp | pl | tp | tl | dt | hd |
+|    | xx | pp | pl | tp | tl | dt | hd |
 |----|----|----|----|----|----|----|----|
-| xx | na | na | na | na | na | na | na |
+| xx |    | na | na | na | na | na | na |
 | pp |yes | na | na | na | na | na | na |
 | pl |yes |no  | na | na | na | na | na |
 | tp |yes |yes |no  | na | na | na | na |
